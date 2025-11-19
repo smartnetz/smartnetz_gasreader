@@ -1,0 +1,27 @@
+name: "Smartnetz Gaszähler MQTT Discovery"
+slug: "smartnetz_gasreader"
+description: "Richtet die Gaszähler-Sensoren via MQTT Auto-Discovery ein."
+version: "1.0.0"
+arch:
+  - aarch64
+  - amd64
+  - armv7
+  - armhf
+  - i386
+startup: "once"
+boot: "auto"
+init: false
+services:
+  - "mqtt:need"
+options:
+  discovery_prefix: "homeassistant"
+  device_id: "smartnetz_gas"
+  state_topic: "tele/Gaszaehler/json"
+  lwt_topic: "tele/Gaszaehler/LWT"
+  device_name: "Smartnetz Gaszähler"
+schema:
+  discovery_prefix: str
+  device_id: str
+  state_topic: str
+  lwt_topic: str
+  device_name: str
