@@ -2,10 +2,7 @@
 set -e
 bashio::log.info "Starte Smartnetz Gaszähler MQTT Discovery Add-on..."
 
-if ! bashio::services.available "mqtt"; then
-  bashio::log.fatal "MQTT-Service nicht gefunden."
-  exit 1
-fi
+
 
 MQTT_HOST=$(bashio::services mqtt "host")
 MQTT_PORT=$(bashio::services mqtt "port")
